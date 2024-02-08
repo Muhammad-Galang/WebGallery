@@ -10,6 +10,9 @@ import KategoriEdit from './admin/kategori/edit';
 import Gambar from './admin/gambar';
 import GambarTambah from './admin/gambar/tambah';
 import GambarEdit from './admin/gambar/edit';
+import Pembeli from './admin/pembeli';
+import PembeliTambah from './admin/pembeli/tambah';
+import PembeliEdit from './admin/pembeli/edit';
 import { useAuth } from './auth/AuthContext';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
@@ -39,6 +42,9 @@ function Admin() {
                             <Route path="picture" element={<Gambar/>} />
                             <Route path="picture/tambah" element={<GambarTambah/>} />
                             <Route path="picture/edit/:id" element={<GambarEdit />} />
+                            <Route path="pembeli" element={<Pembeli/>} />
+                            <Route path="pembeli/tambah" element={<PembeliTambah/>} />
+                            <Route path="pembeli/edit/:id" element={<PembeliEdit />} />
                             <Route index element={<Dashboard />} />
                         </Routes>
                     </div>

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GambarController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\PembeliController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\CommentController;
 
@@ -35,6 +36,12 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::match(['put', 'post'], 'kategori-update/{id}', [KategoriController::class, 'update']);
     Route::delete('kategori-delete/{id}', [KategoriController::class,'destroy']);        
     
+    // pembeli
+    Route::post('pembeli',[PembeliController::class,'store']);
+    Route::get('pembeli/{id}',[PembeliController::class,'show']);
+    Route::match(['put', 'post'], 'pembeli-update/{id}', [PembeliController::class, 'update']);
+    Route::delete('pembeli-delete/{id}', [PembeliController::class,'destroy']);        
+
     //gambar
     Route::post('gambar',[GambarController::class,'store']);
     Route::match(['put', 'post'], 'gambar-update/{id}', [GambarController::class, 'update']);
@@ -49,6 +56,8 @@ Route::middleware(['auth:sanctum'])->group(function () {
 });
 
 Route::get('kategori',[KategoriController::class,'index']);
+
+Route::get('pembeli',[PembeliController::class,'index']);
 
 Route::get('gambar',[GambarController::class,'index']);
 Route::get('gambar/{id}',[GambarController::class,'show']);
