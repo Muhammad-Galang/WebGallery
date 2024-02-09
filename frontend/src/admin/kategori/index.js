@@ -109,6 +109,8 @@ const Kategori = () => {
                       <tr>
                         <th className="text-center">No</th>
                         <th>Nama Kategori</th>
+                        <th>Field 01</th>
+                        <th>Field 02</th>
                         <th>Jenis Kategori</th>
                         <th>Alamat Kategori</th>
                         <th className="text-center">Action</th>
@@ -119,6 +121,8 @@ const Kategori = () => {
                         <tr key={`category-${index}`}>
                           <td className="text-center">{index + 1}</td>
                           <td>{category.nama_kategori}</td>
+                          <td>{category.field_01}</td>
+                          <td>{category.field_02}</td>
                           <td>{category.alamat_kategori}</td>
                           <td>{category.jenis_kategori}</td>
                           <td className="text-center">

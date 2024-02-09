@@ -20,12 +20,16 @@ class KategoriController extends Controller
     {
         $rules = [
             'nama_kategori' => 'required|string|max:258',
+            'field_01' => 'required|string|max:258',
+            'field_02' => 'required|string|max:258',
             'alamat_kategori' => 'required|string|max:258',
             'jenis_kategori' => 'required|string|max:258',
         ];
 
         $messages = [
             'nama_kategori.required' => 'Nama kategori is required',
+            'field_01.required' => 'Baris pertama is required',
+            'field_02.required' => 'Baris kedua is required',
             'alamat_kategori.required' => 'Alamat kategori is required',
             'jenis_kategori.required' => 'Jenis kategori is required',
         ];
@@ -40,6 +44,8 @@ class KategoriController extends Controller
 
             Kategori::create([
                 'nama_kategori' => $request->input('nama_kategori'),
+                'field_01' => $request->input('field_01'),
+                'field_02' => $request->input('field_02'),
                 'alamat_kategori' => $request->input('alamat_kategori'),
                 'jenis_kategori' => $request->input('jenis_kategori'),
             ]);
@@ -73,12 +79,16 @@ class KategoriController extends Controller
     {
         $rules = [
             'nama_kategori' => 'required|string|max:258',
+            'field_01' => 'required|string|max:258',
+            'field_02' => 'required|string|max:258',
             'alamat_kategori' => 'required|string|max:258',
                 'jenis_kategori' => 'required|string|max:258',
         ];
 
         $messages = [
             'nama_kategori.required' => 'Nama Kategori is required',
+            'field_01.required' => 'Baris pertama is required',
+            'field_02.required' => 'Baris kedua is required',
             'alamat_kategori.required' => 'Jenis Kategori is required',
             'jenis_kategori.required' => 'Alamat Kategori is required',
         ];
@@ -100,6 +110,8 @@ class KategoriController extends Controller
 
             $updatedData = [
                 'nama_kategori' => $request->input('nama_kategori'),
+                'field_01' => $request->input('field_01'),
+                'field_02' => $request->input('field_02'),
                 'alamat_kategori' => $request->input('alamat_kategori'),
                 'jenis_kategori' => $request->input('jenis_kategori'),
             ];

@@ -8,6 +8,8 @@ const KategoriTambah = () => {
     const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
       nama_kategori: "",
+      field_01: "",
+      field_02: "",
       alamat_kategori: "",
       jenis_kategori: "",
     });
@@ -94,6 +96,24 @@ const KategoriTambah = () => {
                   name="nama_kategori"
                   onChange={handleChange}
                   value={formData.nama_kategori}
+                  className="form-control"
+                  required
+                ></input>
+                <p className="fw-bold">Bari Pertama</p>
+                <input
+                  type="text"
+                  name="field_01"
+                  onChange={handleChange}
+                  value={formData.field_01}
+                  className="form-control"
+                  required
+                ></input>
+                <p className="fw-bold">Baris Kedua</p>
+                <input
+                  type="text"
+                  name="field_02"
+                  onChange={handleChange}
+                  value={formData.field_02}
                   className="form-control"
                   required
                 ></input>
