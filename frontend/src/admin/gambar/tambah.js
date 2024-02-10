@@ -83,7 +83,7 @@ const GambarTambah = () => {
             });
 
             setTimeout(() => {
-                navigate('/admin/gambar');
+                navigate('/admin/picture');
             }, 1000);
         } catch (error) {
             console.error('Error creating gambar:', error.response.data);
@@ -120,7 +120,7 @@ const GambarTambah = () => {
 
                 <div className="card shadow mb-4">
                     <div className="card-header py-3 d-flex justify-content-end align-items-center">
-                        <Link to="/admin/gambar" className="btn btn-danger">
+                        <Link to="/admin/picture" className="btn btn-danger">
                             <i className="bi bi-arrow-bar-left"></i>
                             <span> Kembali</span>
                         </Link>

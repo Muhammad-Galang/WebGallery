@@ -111,7 +111,7 @@ const GambarEdit = () => {
                 });
     
                 setTimeout(() => {
-                    navigate('/admin/gambar');
+                    navigate('/admin/picture');
                 }, 1000);
             } else {
                 // Handle the case where response or response.data is undefined
@@ -136,102 +136,115 @@ const GambarEdit = () => {
     
 
     return (
-        <div className="container-fluid">
-            <div>
-                <h1 className="h3 mb-3 text-gray-800">Edit Gambar</h1>
+      <div className="container-fluid">
+        <div>
+          <h1 className="h3 mb-3 text-gray-800">Edit Gambar</h1>
 
-                <div className="card shadow mb-4">
-                    <div className="card-header py-3 d-flex justify-content-end align-items-center">
-                        <Link to="/admin/gambar" className="btn btn-danger">
-                            <i className="bi bi-arrow-bar-left"></i>
-                            <span> Kembali</span>
-                        </Link>
-                        <button
-                            type="button"
-                            className="btn btn-success ml-2"
-                            onClick={handleSubmit}
-                            disabled={loading}
-                        >
-                            <i className="bi bi-file-earmark-check"></i>
-                            <span> Simpan</span>
-                        </button>
-                    </div>
-                    <div className="card-body">
-                        <form>
-                            <div className="row">
-                                <div className="col-6">
-                                    <p className="fw-bold">Kategori Gambar</p>
-                                    <select
-                                        name="id_kategori"
-                                        onChange={handleChange}
-                                        value={formData.id_kategori}
-                                        className="form-control"
-                                    >
-                                        <option value="">Pilih Kategori</option>
-                                        {kategoriOptions.map((kategori) => (
-                                            <option key={kategori.id_kategori} value={kategori.id_kategori}>
-                                                {kategori.nama_kategori}
-                                            </option>
-                                        ))}
-                                    </select>
-                                </div>
-                                <div className="col-6">
-                                    <p className="fw-bold">Nama/Judul Gambar</p>
-                                    <input
-                                        type="text"
-                                        name="nama_gambar"
-                                        onChange={handleChange}
-                                        value={formData.nama_gambar}
-                                        className="form-control"
-                                    />
-                                </div>
-                            </div>
-                            <p className="fw-bold mt-3">Gambar</p>
-                            <input
-                                type="file"
-                                name="gambar"
-                                onChange={handleChange}
-                                className="form-control"
-                            />
-                            <div className="image-preview-container">
-    {previewImage ? (
-        <div className="mt-2">
-            <img
-                src={previewImage}
-                alt="Preview"
-                style={{ maxWidth: '50%', height: '50%', borderRadius: '5%' }}
-            />
-            <a
-                role="button"
-                onClick={handleChange}
-                className="cancel-button"
-            >
-                <i className="fas fa-times text-danger"></i>
-            </a>
-        </div>
-    ) : originalImage && ( // Check if originalImage exists
-        <div className="mt-2">
-            <img
-                src={`http://localhost:8000/files/` + originalImage}
-                alt="Original Preview"
-                style={{ maxWidth: '50%', height: '50%', borderRadius: '5%' }}
-            />
-        </div>
-    )}
-</div>
-
-                            <p className="fw-bold mt-3">Deskripsi Gambar</p>
-                            <textarea
-                                name="deskripsi"
-                                onChange={handleChange}
-                                value={formData.deskripsi}
-                                className="form-control"
-                            ></textarea>
-                        </form>
-                    </div>
-                </div>
+          <div className="card shadow mb-4">
+            <div className="card-header py-3 d-flex justify-content-end align-items-center">
+              <Link to="/admin/picture" className="btn btn-danger">
+                <i className="bi bi-arrow-bar-left"></i>
+                <span> Kembali</span>
+              </Link>
+              <button
+                type="button"
+                className="btn btn-success ml-2"
+                onClick={handleSubmit}
+                disabled={loading}
+              >
+                <i className="bi bi-file-earmark-check"></i>
+                <span> Simpan</span>
+              </button>
             </div>
+            <div className="card-body">
+              <form>
+                <div className="row">
+                  <div className="col-6">
+                    <p className="fw-bold">Kategori Gambar</p>
+                    <select
+                      name="id_kategori"
+                      onChange={handleChange}
+                      value={formData.id_kategori}
+                      className="form-control"
+                    >
+                      <option value="">Pilih Kategori</option>
+                      {kategoriOptions.map((kategori) => (
+                        <option
+                          key={kategori.id_kategori}
+                          value={kategori.id_kategori}
+                        >
+                          {kategori.nama_kategori}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="col-6">
+                    <p className="fw-bold">Nama/Judul Gambar</p>
+                    <input
+                      type="text"
+                      name="nama_gambar"
+                      onChange={handleChange}
+                      value={formData.nama_gambar}
+                      className="form-control"
+                    />
+                  </div>
+                </div>
+                <p className="fw-bold mt-3">Gambar</p>
+                <input
+                  type="file"
+                  name="gambar"
+                  onChange={handleChange}
+                  className="form-control"
+                />
+                <div className="image-preview-container">
+                  {previewImage ? (
+                    <div className="mt-2">
+                      <img
+                        src={previewImage}
+                        alt="Preview"
+                        style={{
+                          maxWidth: "50%",
+                          height: "50%",
+                          borderRadius: "5%",
+                        }}
+                      />
+                      <a
+                        role="button"
+                        onClick={handleChange}
+                        className="cancel-button"
+                      >
+                        <i className="fas fa-times text-danger"></i>
+                      </a>
+                    </div>
+                  ) : (
+                    originalImage && ( // Check if originalImage exists
+                      <div className="mt-2">
+                        <img
+                          src={`http://localhost:8000/files/` + originalImage}
+                          alt="Original Preview"
+                          style={{
+                            maxWidth: "50%",
+                            height: "50%",
+                            borderRadius: "5%",
+                          }}
+                        />
+                      </div>
+                    )
+                  )}
+                </div>
+
+                <p className="fw-bold mt-3">Deskripsi Gambar</p>
+                <textarea
+                  name="deskripsi"
+                  onChange={handleChange}
+                  value={formData.deskripsi}
+                  className="form-control"
+                ></textarea>
+              </form>
+            </div>
+          </div>
         </div>
+      </div>
     );
 };
 
