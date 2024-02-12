@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nama_pembeli');
             $table->string('alamat_pembeli');
             $table->string('umur_pembeli');
+            $table->string('jenis_kelamin');
             $table->timestamps();
         });
     }

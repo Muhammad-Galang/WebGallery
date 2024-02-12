@@ -22,12 +22,14 @@ class PembeliController extends Controller
             'nama_pembeli' => 'required|string|max:258',
             'alamat_pembeli' => 'required|string|max:258',
             'umur_pembeli' => 'required|string|max:258',
+            'jenis_kelamin' => 'required|string|max:258',
         ];
 
         $messages = [
             'nama_pembeli.required' => 'Nama pembeli is required',
             'alamat_pembeli.required' => 'Alamat pembeli is required',
             'umur_pembeli.required' => 'Jenis pembeli is required',
+            'jenis_kelamin.required' => 'Jenis pembeli is required',
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -42,6 +44,7 @@ class PembeliController extends Controller
                 'nama_pembeli' => $request->input('nama_pembeli'),
                 'alamat_pembeli' => $request->input('alamat_pembeli'),
                 'umur_pembeli' => $request->input('umur_pembeli'),
+                'jenis_kelamin' => $request->input('jenis_kelamin'),
             ]);
 
             return response()->json([
@@ -75,12 +78,14 @@ class PembeliController extends Controller
             'nama_pembeli' => 'required|string|max:258',
             'alamat_pembeli' => 'required|string|max:258',
             'umur_pembeli' => 'required|string|max:258',
+            'jenis_kelamin' => 'required|string|max:258',
         ];
 
         $messages = [
             'nama_pembeli.required' => 'Nama Pembeli is required',
             'alamat_pembeli.required' => 'Jenis Pembeli is required',
             'umur_pembeli.required' => 'Alamat Pembeli is required',
+            'jenis_kelamin.required' => 'Alamat Pembeli is required',
         ];  
 
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -102,6 +107,7 @@ class PembeliController extends Controller
                 'nama_pembeli' => $request->input('nama_pembeli'),
                 'alamat_pembeli' => $request->input('alamat_pembeli'),
                 'umur_pembeli' => $request->input('umur_pembeli'),
+                'jenis_kelamin' => $request->input('jenis_kelamin'),
             ];
 
 

@@ -111,6 +111,7 @@ const Pembeli = () => {
                       <th>Nama Pembeli</th>
                       <th>Alamat Pembeli</th>
                       <th>Umur Pembeli</th>
+                      <th>Jenis Kembali</th>
                       <th className="text-center">Action</th>
                     </tr>
                   </thead>
@@ -121,6 +122,7 @@ const Pembeli = () => {
                         <td>{category.nama_pembeli}</td>
                         <td>{category.alamat_pembeli}</td>
                         <td>{category.umur_pembeli}</td>
+                        <td>{category.jenis_kelamin}</td>
                         <td className="text-center">
                           <NavLink
                             to={`edit/${category.id_pembeli}`}

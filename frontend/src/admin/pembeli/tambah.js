@@ -10,6 +10,7 @@ const PembeliTambah = () => {
       nama_pembeli: "",
       alamat_pembeli: "",
       umur_pembeli: "",
+      jenis_kelamin: "",
     });
     const { authToken } = useAuth();
     const navigate = useNavigate();
@@ -112,6 +113,15 @@ const PembeliTambah = () => {
                   name="umur_pembeli"
                   onChange={handleChange}
                   value={formData.umur_pembeli}
+                  className="form-control"
+                  required
+                ></input>
+                <p className="fw-bold">Jenis Kelamin</p>
+                <input
+                  type="text"
+                  name="jenis_kelamin"
+                  onChange={handleChange}
+                  value={formData.jenis_kelamin}
                   className="form-control"
                   required
                 ></input>

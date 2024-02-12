@@ -12,7 +12,8 @@ const PembeliEdit = () => {
   const [formData, setFormData] = useState({
     nama_pembeli: '',
     alamat_pembeli: '',
-    umur_pembeli: ''
+    umur_pembeli: '',
+    jenis_kelamin: ''
   });
 
   const navigate = useNavigate();
@@ -126,6 +127,14 @@ const PembeliEdit = () => {
                 name="umur_pembeli"
                 onChange={handleChange}
                 value={formData.umur_pembeli}
+                className="form-control"
+              ></input>
+              <p className="fw-bold">Jenis Kelamin</p>
+              <input
+                type="text"
+                name="jenis_kelamin"
+                onChange={handleChange}
+                value={formData.jenis_kelamin}
                 className="form-control"
               ></input>
             </form>
