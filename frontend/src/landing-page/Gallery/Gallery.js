@@ -86,6 +86,7 @@ const Gallery = () => {
   const displayedImages = showMore ? images : images.slice(0, 8);
 
   return (
+    <div>
     <div className='mt-4'>
       <h1 className='fw-bold fs-4'>Gallery</h1>
       <Card.Body>
@@ -102,7 +103,7 @@ const Gallery = () => {
                   <Card.Body>
                     <div className='row mb-3'>
                       <div className='col-2'>
-                        <img src={`http://localhost:8000/files/` + image.foto_user} alt='foto_profil' className='img-profile rounded-circle' width={30} height={30}></img>                        
+                        <img src={`http://localhost:8000/files/` + image.foto_user} alt='foto_profil' className='img-profile rounded-circle' width={30} height={30}></img>
                       </div>
                       <div className='col-6 d-flex align-items-center'>{image.name}</div>
                     </div>
@@ -131,7 +132,7 @@ const Gallery = () => {
                           }}
                       ></i>
                       <span className="ms-3">
-                        <Link to={`comment-gambar/${image.id_gambar}`} disabled={!authToken} className='text-dark'>          
+                        <Link to={`comment-gambar/${image.id_gambar}`} disabled={!authToken} className='text-dark'>
                           <i className="bi bi-chat-dots bi-2x"></i>
                         </Link>
                       </span>
@@ -140,7 +141,7 @@ const Gallery = () => {
                     </div>
                     <div className='d-block mt-2'>
                       <h6 className='fw-bold'>{image.jumlah_like} Suka</h6>
-                      <Link to={`comment-gambar/${image.id_gambar}`} className='text-secondary'>          
+                      <Link to={`comment-gambar/${image.id_gambar}`} className='text-secondary'>
                         Lihat {image.jumlah_comment} Komentar
                         </Link>
                     </div>
@@ -151,7 +152,7 @@ const Gallery = () => {
           </Row>
         )}
       </Card.Body>
-      
+
       {displayedImages.length > 8 && (
       <Row className="mt-3">
         <Col xs={12} className="text-end">
@@ -161,6 +162,31 @@ const Gallery = () => {
         </Col>
       </Row>
       )}
+    </div>
+
+    <div className="container-fluid">
+      <div className="row">
+        <div className="card-columns">
+          <div className="card card-pin">
+            <img
+              className="card-img"
+              src="https://images.unsplash.com/photo-1489743342057-3448cc7c3bb9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6d284a2efbca5f89528546307f7e7b87&auto=format&fit=crop&w=500&q=60"
+              alt="Card image"
+            />
+            <div className="overlay">
+              <h2 className="card-title title">Cool Title</h2>
+              <div className="more">
+                <a href="post.html">
+                  <i className="fa fa-arrow-circle-o-right" aria-hidden="true"></i>{" "}
+                  More{" "}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     </div>
   );
 }
